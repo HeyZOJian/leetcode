@@ -26,7 +26,7 @@ Note:
     matrix will have a number of rows and columns in range [1, 20].
     matrix[i][j] will be integers in range [0, 99].
 
-利用正对角线元素之差均为0的性质判断
+利用处于同一条对角线上的x,y坐标的差值是相同的性质判断同一条对角线的值是否相同
 enumerate同时获得索引和值
 """
 
@@ -39,9 +39,7 @@ class Solution:
         """
         groups = {}
         for r, row in enumerate(matrix):
-            print(r, row)
             for c, val in enumerate(row):
-                print(c, val)
                 if r - c not in groups:
                     groups[r - c] = val
                 elif groups[r - c] != val:
