@@ -22,19 +22,19 @@ class Solution:
         :type right: int
         :rtype: List[int]
         """
-        ans = [];
+        ans = []
         for i in range(left, right+1):
             if is_self_dividing_number(i):
-                ans.append(i);
-        return ans;
+                ans.append(i)
+        return ans
 
 
 def is_self_dividing_number(num):
     for i in str(num):
         # if int(i) == 0:
-        #     return 0;
+        #     return 0
         # elif num % int(i) != 0:
-        #     return 0;
+        #     return 0
         if i == "0" or num % int(i) !=0:
-            return False;
-    return True;
+            return False
+    return True

@@ -15,7 +15,7 @@ class Solution:
         :rtype: int
         """
         # bin(x,y) :0b...
-        return int(str(bin(x ^ y)[2:].count("1")));
+        return int(str(bin(x ^ y)[2:].count("1")))
         # z = x ^ y;
         # ans = 0;
         # for i in range(32):
@@ -24,4 +24,4 @@ class Solution:
         # return ans;
 
 if __name__ == "__main__":
-    print(Solution().hammingDistance(1,4));
+    print(Solution().hammingDistance(1, 4))
