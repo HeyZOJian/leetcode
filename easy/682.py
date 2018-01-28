@@ -33,27 +33,17 @@ class Solution:
         :type ops: List[str]
         :rtype: int
         """
-        ans = 0
         scores = []
-        # print(ops)
         for op in ops:
-            if str(op).isdigit() or str(op).startswith("-"):
-                ans += int(op)
-                scores.append(int(op))
-            elif op == 'D':
-                num = scores.pop()
-                scores.append(num)
-                scores.append(num*2)
-                ans += num*2
+            if op == 'D':
+                scores.append(scores[-1]*2)
             elif op == 'C':
-                ans -= scores[-1]
                 scores.pop()
             elif op == '+':
-                num = scores[-1]+scores[-2]
-                ans += num
-                scores.append(num)
-            # print(scores, ans)
-        return ans
+                scores.append(scores[-1]+scores[-2])
+            else:
+                scores.append(int(op))
+        return sum(scores)
 
 
 if __name__ == "__main__":
